@@ -1,0 +1,16 @@
+			@font-face {
+				font-family: 'montserrat-regular';
+				font-style: normal;
+				src: url('/wp-content/uploads/useanyfont/190606071335Montserrat-regular.eot');
+				src: local('montserrat-regular'), url('/wp-content/uploads/useanyfont/190606071335Montserrat-regular.eot') format('embedded-opentype'), url('/wp-content/uploads/useanyfont/190606071335Montserrat-regular.woff') format('woff');
+			}
+            
+            .montserrat-regular{font-family: 'montserrat-regular' !important;}
+            
+						body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, #menu-menu-draco li a, #menu-menu-draco li span{
+					font-family: '' !important;
+				}
+						body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, #menu-draco li a, #menu-draco li span, #menu-menu-draco li a, #menu-menu-draco li span{
+					font-family: 'montserrat-regular' !important;
+				}
+		

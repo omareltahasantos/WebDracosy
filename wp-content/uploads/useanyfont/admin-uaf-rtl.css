@@ -1,0 +1,10 @@
+			@font-face {
+				font-family: 'montserrat-regular';
+				font-style: normal;
+				src: url('/wp-content/uploads/useanyfont/190606071335Montserrat-regular.eot');
+				src: local('montserrat-regular'), url('/wp-content/uploads/useanyfont/190606071335Montserrat-regular.eot') format('embedded-opentype'), url('/wp-content/uploads/useanyfont/190606071335Montserrat-regular.woff') format('woff');
+			}
+            
+            .et_gf_montserrat-regular{background:none !important;font-family:montserrat-regular;text-indent:0 !important;font-size:25px;}
+            
+		

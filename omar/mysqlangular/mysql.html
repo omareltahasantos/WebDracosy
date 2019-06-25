@@ -1,0 +1,46 @@
+	
+
+	
+
+        <!DOCTYPE html>
+<html ng-app="listarRegistros">
+        <head>
+                <meta charset ="utf-8">
+                <title>Hola Controller</title>
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+                <script src="mysql.js"></script>
+        </head>
+        <body ng-controller = "postresController">
+	
+		<table class="table table-striped">
+			<thead>
+				<th>Id</th>
+				 <th>Nombre</th>
+				<th>Email</th>	
+				<th>Mensaje</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat = "x in names">
+					<td>{{x.Id}}</td>
+					<td>{{x.Nombre}}</td>
+					<td>{{x.Email}}</td>
+					<td>{{x.Mensaje}}</td>
+
+				</tr>
+			</tbody>
+
+		</table>
+
+		
+        </body>
+</html>
+
+
+
+~
+~                                                                                      
+~                                                                                      
+~                                                                                      
+~                                                                                      
+~                                                                                      
+~                                   

@@ -1,0 +1,42 @@
+	
+
+	
+
+        <!DOCTYPE html>
+<html ng-app="CustomDirective">
+        <head>
+                <meta charset ="utf-8">
+                <title>Hola Controller</title>
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+		<script src = "//code.jquery.com/jquery-latest.min.js"></script>
+		<script src = "autocomplete-jquery-ui.js"></script>
+                <script src="controladortuto17.js"></script>
+
+        <style>
+                .circular{
+                        border-radius: 50%;
+                        width:100px;
+                        height:100px;
+                        display:inline-block;
+
+                        }
+
+
+
+        </style>
+        </head>
+        <body ng-controller = "AppCtrl">
+		<input type ="text" my- autocomplete ="repos" placeholder = "Buscar repositorio">
+                <ul class="no-list" ng-cloak> <!--ng-cloak serveix per esperar que tot estigui carregat per mostrarlo. Si no tenim bona conexio es carregara molt lent i per aixo existeix aquesta directiva -->
+                        <li ng-repeat = "repo in repos">
+                                <div class = "circular" back-img = "{{repo.owner.avatar_url}}"></div> <!--Utilitzem una nova directiva creada al js per fer que la imatge sigui 
+                                circular i tingui uns estils especifics-->
+                                <h1>{{repo.name}}</h1>
+                        </li>
+                </ul>
+
+        </body>
+</html>
+
+
+

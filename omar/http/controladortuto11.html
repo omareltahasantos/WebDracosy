@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="mainmodule">
+	 <head>
+                <meta charset ="utf-8">
+                <title>Hola Controller</title>
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angul		ar.min.js"></script>
+		<script>
+			angular.module("mainmodule",[])
+			.controller("FirstController",function($scope){
+			$scope.nombre ="Omar";
+			 setTimeout(function(){  
+               			$scope.$apply(function(){
+					$scope.nombre = "Codigo Facilito"
+
+			});
+                        },2000); /*Timeout es una funcion para ejecutar lo que queramos despues de cierto tiempo, en este caso despues de 2 segu ndos.   */
+                        
+                       	         	
+			});
+		</script>
+               
+        </head>
+        <body ng-controller = "FirstController">
+		<h1>{{nombre}}</h1>
+        </body>
+</html>                                            

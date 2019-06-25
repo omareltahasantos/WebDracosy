@@ -1,0 +1,44 @@
+	
+	
+        <!DOCTYPE html>
+<html ng-app>
+        <head>
+                <meta charset ="utf-8">
+                <title>Hola Controller</title>
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+                
+        </head>
+        <body>
+	<button ng-click="bandera = !bandera">  <!--Amb la directiva ng-click li estem dient sempre que facis un click cambia el valor de bandera.
+							Els valor que té bandera són True o False-->
+	click me 	
+	</button><span ng-show= "bandera">-click</span><br>  
+
+
+	 <p>
+                {{bandera | json}}
+
+
+    <!--Al programa li estem dient amb la directiva mouseover que si esta per sobra el ratolí el valor de bandera sigui true i amb la directiva mouseout                                           que si esta per fora el valor de bandera sigui false.
+        Finalment amb {{bandera| json li dic que hem mostri si es true o false per veure si funciona}}-->
+        </p>
+
+
+	
+	<button ng-mouseover = "opcion = true" ng-mouseout = "opcion = false">
+        Hover me
+        </button><span ng-show= "opcion">-clickk</span>   
+
+
+
+
+	<p>
+
+	 {{opcion | json}}
+
+	</p>
+        </body>
+</html>
+
+
+
