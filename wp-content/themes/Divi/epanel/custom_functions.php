@@ -599,16 +599,16 @@ if ( ! function_exists( 'print_thumbnail' ) ) {
 			$thumbnail = $new_method_thumb;
 		}
 
-		if ( false === $forstyle ) {
-			$output = '<img src="' . ( $raw ? $thumbnail : esc_url( $thumbnail ) ) . '"';
+		if ( false === $forstyle && $resize ) {
+			$output = sprintf(
+				'<img src="%1$s" alt="%2$s" class="%3$s"%4$s />',
+				$raw ? $thumbnail : esc_url( $thumbnail ),
+				esc_attr( strip_tags( $alttext ) ),
+				empty( $class ) ? '' : esc_attr( $class ),
+				apply_filters( 'et_print_thumbnail_dimensions', " width='" . esc_attr( $width ) . "' height='" .esc_attr( $height ) . "'" )
+			);
 
-			if ( ! empty( $class ) ) $output .= " class='" . esc_attr( $class ) . "' ";
-
-			$dimensions = apply_filters( 'et_print_thumbnail_dimensions', " width='" . esc_attr( $width ) . "' height='" .esc_attr( $height ) . "'" );
-
-			$output .= " alt='" . esc_attr( strip_tags( $alttext ) ) . "'{$dimensions} />";
-
-			if ( ! $resize ) $output = $thumbnail;
+			$output = et_image_add_srcset_and_sizes( $output );
 		} else {
 			$output = $thumbnail;
 		}
@@ -638,9 +638,20 @@ if ( ! function_exists( 'et_new_thumb_resize' ) ) {
 
 		$thumb = esc_attr( $new_method_thumb );
 
-		$output = '<img src="' . esc_url( $thumb ) . '" alt="' . esc_attr( $alt ) . '" width =' . esc_attr( $width ) . ' height=' . esc_attr( $height ) . ' />';
+		// Bail early when $forstyle argument is true.
+		if ( $forstyle ) {
+			return $thumb;
+		}
 
-		return ( !$forstyle ) ? $output : $thumb;
+		$output = sprintf(
+			'<img src="%1$s" alt="%2$s" width="%3$s" height="%4$s" />',
+			esc_url( $thumb ),
+			esc_attr( $alt ),
+			esc_attr( $width ),
+			esc_attr( $height )
+		);
+
+		return et_image_add_srcset_and_sizes( $output );
 	}
 
 }
